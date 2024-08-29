@@ -1,0 +1,19 @@
+.TopWrap{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-around;
+    
+}
+
+.wrapText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapText h1{
+    font-size: 4rem;
+}
+.wrapText p{
+    font-size: 3rem;
+}
