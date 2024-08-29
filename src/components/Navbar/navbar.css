@@ -1,0 +1,52 @@
+.navbar {
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Stick the navbar to the top of the page */
+    width: 100%; /* Full width */
+    background: none; /* Background color */
+    padding: 10px 0;
+    padding-right: 6rem;/* Padding for the navbar */
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+    display: flex;
+    gap: 4rem;
+    flex-direction: row-reverse;/* Center the items horizontally */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Style the links inside the navbar */
+.navbar a {
+    color: white; /* Text color */
+    padding: 14px 20px; /* Padding inside each link */
+    text-decoration: none; /* Remove underline */
+    font-size: larger;
+    text-align: center; /* Center the text */
+    position: relative; /* For positioning the after element */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* After pseudo-element for the underline effect */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    left: 50%;
+    bottom: 0;
+    transition: all 1s ease, left 1s ease;
+}
+
+/* Change the link color on hover and animate underline */
+.navbar a:hover {
+    font-size: x-large; /* Text color on hover */
+    transition: all 0.5s ease, left 0.5s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* When the navbar is sticky (scrolled), change its background color */
+.navbar.sticky {
+    background-color: #444; /* Change background color when sticky */
+}
