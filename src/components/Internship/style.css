@@ -10,6 +10,7 @@ a{
     letter-spacing: 4px;
     overflow: hidden;
     margin-right: 50px;
+    cursor: default;
    
 }
 a:nth-child(1){

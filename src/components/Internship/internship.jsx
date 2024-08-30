@@ -5,11 +5,12 @@ const InternshipDetails = ({ title, pos, description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = (event) => {
+    event.preventDefault();
     setIsExpanded(!isExpanded);
   };
 
   return (
-    <a href="#">
+    <a href="#" onClick={(e)=>e.preventDefault()}>
         <span></span>
         <span></span>
         <span></span>
