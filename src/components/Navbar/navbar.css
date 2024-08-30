@@ -9,7 +9,14 @@
     display: flex;
     gap: 4rem;
     flex-direction: row-reverse;/* Center the items horizontally */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* Smooth background color transition */
 }
 
 /* Style the links inside the navbar */

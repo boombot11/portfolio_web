@@ -1,6 +1,8 @@
 .TopWrap{
     display: flex;
-    flex-direction: row;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
    justify-content: space-around;
     
 }
@@ -12,8 +14,8 @@
     flex-direction: column;
 }
 .wrapText h1{
-    font-size: 4rem;
+    font-size: 6em;
 }
 .wrapText p{
-    font-size: 3rem;
+    font-size: 4rem;
 }

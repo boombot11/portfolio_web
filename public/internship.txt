@@ -1,0 +1,4 @@
+Title: Tata Digital Limited
+Position: App developer
+Description: During my internship, I worked on developing and improving the robustness of sound system present in tata neu app.
+Worked on Data analysis and events sorting and analyzing

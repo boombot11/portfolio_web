@@ -5,4 +5,5 @@ return   <Suspense fallback={<p>loading</p>}>
 <Splines></Splines>
    </Suspense>
 }
+
 export default  Helper_sever
