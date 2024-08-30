@@ -38,7 +38,7 @@ const ExporterInternship = () => {
   }, []);
 
   return (
-    <div style={{display:"flex",justifyContent:"center",position:"relative",left:"-10%"}}>
+    <div style={{display:"flex",justifyContent:"center",position:"relative",left:"-10%",paddingLeft:"50px"}}>
       <InternshipDetails
         title={details.title}
         pos={details.pos}

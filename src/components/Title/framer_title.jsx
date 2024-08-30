@@ -4,6 +4,9 @@ import styles from './framer_title.css';
 import Helper_sever from "../Spline/middle";
 
 const MyAnimation = () => {
+
+ 
+
   return (
     <div className="TopWrap">
     <div

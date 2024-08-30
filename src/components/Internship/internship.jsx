@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-
+import {motion } from "framer-motion"
 const InternshipDetails = ({ title, pos, description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -10,6 +10,14 @@ const InternshipDetails = ({ title, pos, description }) => {
   };
 
   return (
+    <motion.div
+    style={styles.container}
+    initial={{ x: -200, opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    transition={{ duration: 3, ease: "easeOut" }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, amount: 0.8 }} // Only animate once
+  >
     <a href="#" onClick={(e)=>e.preventDefault()}>
         <span></span>
         <span></span>
@@ -18,7 +26,7 @@ const InternshipDetails = ({ title, pos, description }) => {
         <div className="container" style={styles.container}>
       <h2 style={styles.title}>{title}</h2>
       <h4 style={styles.pos}>{pos}</h4>
-      <p style={styles.description}>
+      <div style={styles.description}>
         {isExpanded ? description: `${description.substring(0, 100)}...`}
         <div
           onClick={toggleReadMore}
@@ -26,10 +34,10 @@ const InternshipDetails = ({ title, pos, description }) => {
         >
           {isExpanded ? " Read less" : " Read more"}
         </div>
-      </p>
+      </div>
     </div>
     </a>
-  
+  </motion.div>
   );
 };
 
