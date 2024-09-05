@@ -1,20 +1,28 @@
-
-  /* Grid container styling */
-  .grid-container {
+/* Grid container styling */
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px; /* Space between items */
     width: 90%;
     max-width: 1200px; /* Adjust as needed */
-  }
-  
-  .main{
+    margin: 0 auto; /* Center the grid container horizontally */
+    justify-content: center; /* Center the grid items */
+    grid-auto-rows: 200px; /* Maintain consistent row height */
+    /* Adjust to make sure items are centered even with a small number of items */
+    align-content: center; 
+}
+
+/* Main container styling */
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  /* Grid item styling */
-  .grid-item {
+    flex-direction: column; /* Center the content vertically */
+    width: 100%;
+}
+
+/* Grid item styling */
+.grid-item {
     position: relative;
     width: 100%;
     height: 200px; /* Adjust height as needed */
@@ -24,16 +32,16 @@
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  
-  /* Hover effect */
-  .grid-item:hover {
+}
+
+/* Hover effect */
+.grid-item:hover {
     transform: scale(1.05); /* Slightly scale up on hover */
     border-color: #b0e0e6; /* Change border color on hover */
-  }
-  
-  /* Overlay to blur image and show title */
-  .overlay {
+}
+
+/* Overlay to blur image and show title */
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -45,17 +53,17 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
-  
-  /* Title styling */
-  .title {
+}
+
+/* Title styling */
+.title {
     color: #fff;
     font-size: 1.5rem;
     text-align: center;
     margin: 0;
-  }
-  
-  /* Show overlay on hover */
-  .grid-item:hover .overlay {
+}
+
+/* Show overlay on hover */
+.grid-item:hover .overlay {
     opacity: 1;
-  }
+}
