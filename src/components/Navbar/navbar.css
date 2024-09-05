@@ -1,59 +1,118 @@
-.navbar {
-    position: sticky; /* Makes the navbar sticky */
-    top: 0; /* Stick the navbar to the top of the page */
-    width: 100%; /* Full width */
-    background: none; /* Background color */
-    padding-right: 6rem;/* Padding for the navbar */
-    z-index: 1000; /* Ensure the navbar stays on top of other content */
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    flex-direction: row-reverse;/* Center the items horizontally */
-    max-height: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    /* Smooth background color transition */
+/* Basic reset for body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Style the links inside the navbar */
-.navbar a {
-    color: white; /* Text color */
-  
-    text-decoration: none; /* Remove underline */
-    font-size: larger;
-    text-align: center; /* Center the text */
-    position: relative; /* For positioning the after element */
-    transition: color 0.3s ease; /* Smooth color transition */
+/* Navbar container */
+.navbar {
+    position: sticky; /* Sticky at the top */
+    top: 0;
+    width: 100%;
+    height: 6rem;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
+
+/* Navbar links styling */
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: transform 1s ease, color 1s ease;
+}
+
 
 /* After pseudo-element for the underline effect */
-.navbar a::after {
+.navbar-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: black;
     left: 50%;
     bottom: 0;
+    transform: translateY(-4px);
     transition: all 1s ease, left 1s ease;
 }
 
 /* Change the link color on hover and animate underline */
-.navbar a:hover {
-    font-size: x-large; /* Text color on hover */
-    transition: all 0.5s ease, left 0.5s ease;
+.navbar-links a:hover {
+    transform: scale(1.2);
 }
 
-.navbar a:hover::after {
+.navbar-links a:hover::after {
     width: 100%;
     left: 0;
 }
+/* Menu toggle button for mobile view */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
 
-/* When the navbar is sticky (scrolled), change its background color */
-.navbar.sticky {
-    background-color: #444; /* Change background color when sticky */
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 16px 16px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+    .navbar-links a {
+        position: fixed;
+        color: #333;
+        text-decoration: none;
+        font-size: 2.3rem;
+        position: relative;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+
+    .navbar.open .navbar-links {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+/* Change the link color on hover and animate underline */
+.navbar-links a:hover {
+    transform: scale(1.05);
+}
+.navbar-links a::after {
+display: none;
+}
 }
