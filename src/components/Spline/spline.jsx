@@ -71,12 +71,12 @@ export default function Splines() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems:'center' }}>
-      <motion.div
+      <div
         style={WrapStyle}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        onAnimationComplete={() => setLoad(true)}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 1 }}
+        // onAnimationComplete={() => setLoad(true)}
       >
         <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowLeft', 37)}>
           ←
@@ -85,7 +85,7 @@ export default function Splines() {
         <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowRight', 39)}>
           →
         </button>
-      </motion.div>
+      </div>
      
     </div>
   );
