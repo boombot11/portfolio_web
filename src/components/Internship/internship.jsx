@@ -51,17 +51,17 @@ const styles = {
 
   },
   title: {
-    marginBottom: "5px",
-    fontSize: "4rem",
+    marginBottom: "3px",
+    fontSize: "2rem",
     color: "#333",
   },
   pos: {
     marginBottom: "15px",
-    fontSize: "2rem",
+    fontSize: "1.2rem",
     color: "#555",
   },
   description: {
-    fontSize: "16px",
+    fontSize: "14px",
     color: "#666",
     lineHeight: "3",
   },

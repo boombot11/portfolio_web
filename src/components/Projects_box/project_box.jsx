@@ -13,15 +13,23 @@ const projects = [
 const ProjectGrid = () => {
   return (
     <div className='main'>
-    <div className="grid-container">
-      {projects.map((project, index) => (
-        <div className="grid-item" key={index} style={{ backgroundImage: `url(${project.image})` }}>
-          <div className="overlay">
-            <h3 className="title">{project.title}</h3>
+      <div className="grid-container">
+        {projects.map((project, index) => (
+          <div
+            className="grid-item"
+            key={index}
+            style={{
+              backgroundImage: `url(${project.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <div className="overlay">
+              <h3 className="title">{project.title}</h3>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };

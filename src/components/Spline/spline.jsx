@@ -44,14 +44,14 @@ const Timer = setTimeout(() => {
   simulateKeyPress('Enter');
   console.log('xxxxxxxxxxxxxxxxxxxxxxxxxx');
   Repeat();
-}, 50000);
+}, 3000);
 
 function Repeat() {
   Timer;
 }
 
 export default function Splines() {
-  const [load, setLoad] = useState(false);
+
 
   useEffect(() => {
     Repeat();
