@@ -10,13 +10,23 @@ import ExporterInternship from "@/components/Internship/exporter";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-    <Navbar></Navbar>
-      <MyAnimation></MyAnimation>
-      <SplineComponent></SplineComponent>
-      <ExporterInternship></ExporterInternship>
-      <CircularAnimation></CircularAnimation>
-      <ContactMe></ContactMe>
-      <Footer></Footer>
-    </main>
+    <Navbar />
+    <section id="my-animation">
+      <MyAnimation />
+    </section>
+    <section id="spline-component">
+      <SplineComponent />
+    </section>
+    <section id="exporter-internship">
+      <ExporterInternship />
+    </section>
+    <section id="circular-animation">
+      <CircularAnimation />
+    </section>
+    <section id="contact-me">
+      <ContactMe />
+    </section>
+    <Footer />
+  </main>
   );
 }

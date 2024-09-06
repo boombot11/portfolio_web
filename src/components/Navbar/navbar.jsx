@@ -17,10 +17,10 @@ const Navbar = () => {
                 <span className="bar"></span>
             </div>
             <nav className="navbar-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+            <a href="#my-animation">About Me</a>
+      <a href="#exporter-internship">Internships</a>
+      <a href="#circular-animation">Project</a>
+      <a href="#contact-me">Contact </a>
             </nav>
         </div>
     );
