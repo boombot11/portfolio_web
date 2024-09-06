@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
-import ExporterInternship from '../Internship/exporter';
+
 
 
 const ButtonStyle = {
@@ -70,7 +70,7 @@ export default function Splines() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems:'center' }}>
       <motion.div
         style={WrapStyle}
         initial={{ opacity: 0 }}
@@ -86,10 +86,7 @@ export default function Splines() {
           →
         </button>
       </motion.div>
-      {load ? <MemoizedExporterInternship /> : null}
+     
     </div>
   );
 }
-
-// Memoized version of ExporterInternship
-const MemoizedExporterInternship = React.memo(ExporterInternship);

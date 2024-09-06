@@ -2,3 +2,7 @@ Title: Tata Digital Limited
 Position: App developer
 Description: During my internship, I worked on developing and improving the robustness of sound system present in tata neu app.
 Worked on Data analysis and events sorting and analyzing
+__seperator__
+Title: Settlemint Digital India
+Position: App developer
+Description:During my internship worked on learning SOLID principles and applying them on various elements of moblie UI
