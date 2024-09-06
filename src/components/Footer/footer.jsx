@@ -1,36 +1,32 @@
-import './footer.css';
-export default function Footer(){
-    return <div className='main'>
-<footer class="footer">
-  <div class="footer__redes">
-    <ul class="footer__redes-wrapper">
-      <li>
-        <a href="#" >
-         
-          facebook
-        </a>
-      </li>
-      <li>
-        <a href="#" >
-          
-          twitter
-        </a>
-      </li>
-      <li>
-        <a href="#" >
-          
-          instagram
-        </a>
-      </li>
-      <li>
-        <a href="#" >
-        
-          youtube
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="footer__texto">Copyright @ 2022</div>
-</footer>
-    </div>
-}
+'use client'
+import React from 'react';
+import './footer.css'; // External CSS for styling
+
+const Footer = () => {
+    return (
+        <footer className="footer">
+            <div className="footer-content">
+                <ul className="social-icons">
+                    <li>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" />
+                        </a>
+                    </li>
+                </ul>
+                <p>&copy; 2024 Adam | All Rights Reserved</p>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

@@ -4,6 +4,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px; /* Space between items */
     width: 90%;
+    padding-bottom: 5rem;
     max-width: 1200px; /* Adjust as needed */
     margin: 0 auto; /* Center the grid container horizontally */
     justify-content: center; /* Center the grid items */

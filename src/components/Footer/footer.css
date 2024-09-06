@@ -1,111 +1,62 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind&family=Montserrat:wght@700&display=swap");
-
-
-
-
-footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-img {
-  width: 100%;
-  vertical-align: top;
-}
-
-a {
-  text-decoration: none;
-  font-size: xx-large;
-  color: black;
-}
-
 .footer {
-  margin-top: 80px;
-
-  &__redes-wrapper {
-    color: black;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 600px;
-    margin: 45px auto;
-
-    li {
-      display: inline-block;
-
-  
-    }
-  }
-
-  &__link {
-    text-transform: uppercase;
-    font-size: rem(14);
-     display: flex;
-    align-items: center;
-  }
-
- &__icon {
-  margin-right: 10px;
-    width: 15px;
-   height: 15px;
-   }
-
-  .fab {
-    margin-right: 8px;
-  }
-
-  &__texto {
-    color: black;
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-  }
-}
-
-.gallery {
-  &__grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  &__photo {
-    position: relative;
-    display: inline-block;
-  }
-
-  &__fade {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &__icon {
-    color: #fff;
-    width: 50px;
-    height: 50px;
-  }
+    position: relative;
 }
 
-.separador {
-  height: 2px;
-  max-width: 30px;
-  margin: 15px auto 20px;
+.footer-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
 }
-.footer__redes-wrapper{
+
+/* Social Icons styles */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
     display: flex;
-    color: black;
-    flex-direction: row;
     justify-content: center;
+    gap: 20px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Scale up on hover */
+    opacity: 0.8;
+}
+
+/* Copyright text */
+.footer p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
 }
