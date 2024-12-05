@@ -11,7 +11,7 @@ import './globals.css';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className=" flex min-h-screen flex-col">
     <Navbar />
     <section id="my-animation">
       <MyAnimation />

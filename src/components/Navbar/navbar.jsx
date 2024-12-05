@@ -17,10 +17,10 @@ const Navbar = () => {
                 <span className="bar"></span>
             </div>
             <nav className="navbar-links">
-            <a href="#my-animation">About Me</a>
-      <a href="#exporter-internship">Internships</a>
-      <a href="#circular-animation">Project</a>
-      <a href="#contact-me">Contact </a>
+            <a onClick={()=>setIsOpen(false)} href="#my-animation">About Me</a>
+      <a onClick={()=>setIsOpen(false)} href="#exporter-internship">Internships</a>
+      <a onClick={()=>setIsOpen(false)} href="#circular-animation">Project</a>
+      <a onClick={()=>setIsOpen(false)} href="#contact-me">Contact </a>
             </nav>
         </div>
     );
