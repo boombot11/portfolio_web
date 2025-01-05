@@ -3,18 +3,18 @@ import React from 'react';
 import './project_box.css'; // External CSS for styling
 
 const projects = [
-  { title: 'web', image: 'task_login.png' },
-  { title: 'web', image: 'STUDENT+HELP.png' },
-  { title: 'web', image: 'SS2.png' },
-  { title: 'web', image: 'SS3.png' },
-  { title: 'app', image: 'CSI.png' },
-  { title: 'app', image: 'dy.png' },
-  { title: 'web', image: 'Mental_health.png' },
+
+  { title: 'Task Owl', image: 'task_login.png', type: 'web' },
+  { title: 'Student Help', image: 'STUDENT+HELP.png', type: 'web' },
+  { title: 'DJS NOVA', image: 'SS3.png', type: 'web' },
+  { title: 'DJS CSI app', image: 'CSI.png', type: 'app' },
+  { title: 'Hackathon_app (incomplete idk name)', image: 'dy.png', type: 'app' },
+  { title: 'Mental Health website', image: 'Mental_health.png', type: 'web' },
+
 ];
 
-
 const ProjectGrid = () => {
-  
+
   const handleClick = () => {
     // The link to be opened
     const url = 'https://github.com/boombot11?tab=overview&from=2025-01-01&to=2025-01-05';
@@ -22,24 +22,26 @@ const ProjectGrid = () => {
     window.open(url, '_blank');
   };
 
-
   return (
     <div className='main'>
+      <h2 className="projects-heading">Projects</h2>
       <div className="grid-container">
         {projects.map((project, index) => (
-          <div
-            onClick={handleClick}
-            className="grid-item"
-            key={index}
-            style={{
-              backgroundImage: `url(${project.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <div className="overlay">
-              <h3 className="title">{project.title}</h3>
+          <div className="grid-item-wrapper" key={index}>
+            {/* Grid item with hover effects */}
+            <div
+              onClick={handleClick}
+              className="grid-item"
+              style={{
+                backgroundImage: `url(${project.image})`,
+              }}
+            >
+              <div className="overlay">
+                <h3 className="title">{project.type}</h3>
+              </div>
             </div>
+            {/* Title displayed below the image */}
+            <div className="project-name">{project.title}</div>
           </div>
         ))}
       </div>

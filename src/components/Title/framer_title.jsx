@@ -19,6 +19,7 @@ const MyAnimation = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0 }}
+        style={{position:"relative", top:"50px"}}
       >
         Sahil Jadhav
       </motion.h1>
@@ -26,6 +27,7 @@ const MyAnimation = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
+        style={{position:"relative", top:"30px"}}
       >
         Btech IT 2026
       </motion.p>

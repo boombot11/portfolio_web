@@ -6,56 +6,91 @@ body {
 
 /* Navbar container */
 .navbar {
-    position: sticky; /* Sticky at the top */
+    position: fixed; /* Sticky at the top */
     top: 0;
     width: 100%;
     height: 6rem;
     background: rgba(255, 255, 255, 0.8);
     display: flex;
-    justify-content: center;
+
+    justify-content: space-between;
+
     align-items: center;
     backdrop-filter: blur(5px);
     z-index: 1000;
     transition: background-color 0.3s ease;
+    padding: 0 2rem;
+}
+
+/* Brand name at the top left */
+.brand {
+    flex: 1;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #333;
 }
 
 /* Navbar links styling */
 .navbar-links {
     display: flex;
+    justify-content: center;
     gap: 2rem;
+    flex: 2;
 }
 
 .navbar-links a {
     color: #333;
     text-decoration: none;
-    font-size: 1.6rem;
-    position: relative;
-    transition: transform 1s ease, color 1s ease;
+    font-size: 1.2rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: border 0.1s ease;
+    /* border-radius: 8px; */
 }
 
-
-/* After pseudo-element for the underline effect */
-.navbar-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: black;
-    left: 50%;
-    bottom: 0;
-    transform: translateY(-4px);
-    transition: all 1s ease, left 1s ease;
-}
-
-/* Change the link color on hover and animate underline */
+/* Hover effect with background color change */
 .navbar-links a:hover {
-    transform: scale(1.2);
+    cursor:pointer;
+    /* background-color: black; */
+    border-bottom:2px solid black;
+    /* Tailwind's bg-gray-500 */
 }
 
-.navbar-links a:hover::after {
-    width: 100%;
-    left: 0;
+#contact-button{
+    background-color: black;
+    color:white;
+    border-radius: 16px;
+    padding:15px;
+    position:relative;
+    margin-left:80px;
+    transition: background-color 0.2s ease;
 }
+#contact-button:hover{
+    background-color: rgb(52, 52, 52);
+    cursor:pointer;
+}
+/* Contact Button (top right) */
+/* #contact-button {
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: none;
+    position:relative;
+    
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-button:hover {
+    background-color: #555;
+} */
+
 /* Menu toggle button for mobile view */
 .menu-toggle {
     display: none;
@@ -71,7 +106,7 @@ body {
     height: 3px;
     background: #333;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 /* Responsive styles */
@@ -95,9 +130,7 @@ body {
         text-decoration: none;
         font-size: 1.3rem;
         position: relative;
-        transition: transform 0.3s ease, color 0.3s ease;
     }
-    
 
     .navbar.open .navbar-links {
         display: flex;
@@ -106,13 +139,4 @@ body {
     .menu-toggle {
         display: flex;
     }
-
-
-/* Change the link color on hover and animate underline */
-.navbar-links a:hover {
-    transform: scale(1.05);
-}
-.navbar-links a::after {
-display: none;
-}
 }

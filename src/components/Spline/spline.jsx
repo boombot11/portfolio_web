@@ -20,8 +20,9 @@ export default function Splines() {
     minHeight: '400px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between', // Adjusted from 'space-around' to 'space-between'
     alignItems: 'center',
+    padding: '0 30px', // Added horizontal padding to move arrows inward
   };
 
   // Simulate keypresses
