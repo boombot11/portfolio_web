@@ -1,0 +1,63 @@
+.skills-container {
+    margin: 4rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 20px;
+  }
+  
+  .skill-row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+  }
+  
+  .skill-row strong {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .tech-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tech-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img {
+    display: inline;
+    max-width: 100px; /* Adjust size as needed */
+    max-height: 100px;
+  }
+  .image-row{
+    display: flex;
+    gap: 5rem;
+  }
+  
+  /* Media Query for screens below 915px */
+  @media (max-width: 915px) {
+    .skill-row {
+      flex-direction: column; /* Change to column layout below 915px */
+      align-items: center;    /* Center items horizontally in column layout */
+      gap: 20px;              /* Adjust gap for better spacing in column layout */
+    }
+    .image-row{
+        display: flex;
+        gap: 2.5rem;
+      }
+    .tech-row {
+      flex-direction: column; /* Stack technologies vertically in smaller screens */
+      gap: 10px;
+    }
+  }
+  

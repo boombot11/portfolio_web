@@ -8,11 +8,12 @@ import SplineComponent from "@/components/Spline/Exporter";
 import ExporterInternship from "@/components/Internship/exporter";
 import './globals.css';
 import CoachMark from "@/components/coach_mark";
+import SkillsList from "@/components/skills/Skill_list";
 
 
 export default function Home() {
   return (
-    <CoachMark message="The 3D model can be interacted by pressing left or right arrow keys">
+    <CoachMark message="The 3D model can be interacted ON PC by pressing left or right arrow keys">
     <div className=" flex min-h-screen flex-col overflow-hidden">
     <Navbar />
     <section id="my-animation">
@@ -23,6 +24,9 @@ export default function Home() {
     </section>
     <section id="exporter-internship">
       <ExporterInternship />
+    </section>
+    <section id='skills' >
+    <SkillsList/>
     </section>
     <section id="circular-animation">
       <CircularAnimation />

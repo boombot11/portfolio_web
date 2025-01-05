@@ -3,12 +3,14 @@ import React from 'react';
 import './project_box.css'; // External CSS for styling
 
 const projects = [
+
   { title: 'Task Owl', image: 'task_login.png', type: 'web' },
   { title: 'Student Help', image: 'STUDENT+HELP.png', type: 'web' },
   { title: 'DJS NOVA', image: 'SS3.png', type: 'web' },
   { title: 'DJS CSI app', image: 'CSI.png', type: 'app' },
   { title: 'Hackathon_app (incomplete idk name)', image: 'dy.png', type: 'app' },
   { title: 'Mental Health website', image: 'Mental_health.png', type: 'web' },
+
 ];
 
 const ProjectGrid = () => {
