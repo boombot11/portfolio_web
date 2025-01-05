@@ -48,7 +48,7 @@ export default function Splines() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1100) {
-        setMinWidth(1300);
+        setMinWidth(1000);
       } else {
         setMinWidth(650);
       }

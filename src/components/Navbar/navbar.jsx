@@ -18,6 +18,7 @@ const Navbar = () => {
             </div>
             <nav className="navbar-links">
             <a onClick={()=>setIsOpen(false)} href="#my-animation">About Me</a>
+            <a onClick={()=>setIsOpen(false)} href="#skills">Skills </a>
       <a onClick={()=>setIsOpen(false)} href="#exporter-internship">Internships</a>
       <a onClick={()=>setIsOpen(false)} href="#circular-animation">Project</a>
       <a onClick={()=>setIsOpen(false)} href="#contact-me">Contact </a>

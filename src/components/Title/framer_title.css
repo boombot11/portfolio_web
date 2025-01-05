@@ -14,10 +14,10 @@
     flex-direction: column;
 }
 .wrapText h1{
-    font-size: 6em;
+    font-size: 4em;
     text-align: center;
 }
 .wrapText p{
-    font-size: 4rem;
+    font-size: 2rem;
     text-align: center;
 }
