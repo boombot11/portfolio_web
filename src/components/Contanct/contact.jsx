@@ -46,6 +46,9 @@ export default function ContactMe() {
               <div className="app-title">
                 <span>CONTACT</span>
                 <span>Me</span>
+                <span>Not Working for now</span>
+                <span>sahiljadhav2769@gmail.com</span>
+                <span>8828181102</span>
               </div>
               <div className="app-contact">sahiljadhav2769@gmail.com  +91 8828181102</div>
             </div>

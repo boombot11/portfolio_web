@@ -21,7 +21,7 @@ body, button, input, textarea {
 }
 
 .container {
-  flex: 0 1 700px;
+  flex: 0 1 900px;
   margin: auto;
   padding: 10px;
 }
@@ -212,7 +212,7 @@ body, button, input, textarea {
   }
 
   .app-title {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .app-title span {
