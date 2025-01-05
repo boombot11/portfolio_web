@@ -6,7 +6,7 @@ const projects = [
   { title: 'web', image: 'task_login.png' },
   { title: 'web', image: 'STUDENT+HELP.png' },
   { title: 'web', image: 'SS2.png' },
-  { title: 'web', image: '3.png' },
+  { title: 'web', image: 'SS3.png' },
   { title: 'app', image: 'CSI.png' },
   { title: 'app', image: 'dy.png' },
   { title: 'web', image: 'Mental_health.png' },
