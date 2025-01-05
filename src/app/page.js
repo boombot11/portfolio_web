@@ -12,7 +12,7 @@ import CoachMark from "@/components/coach_mark";
 
 export default function Home() {
   return (
-    <CoachMark message="The 3D model can be interacted by pressing left or right arrow keys">
+    <CoachMark message="The 3D model can be interacted ON PC by pressing left or right arrow keys">
     <div className=" flex min-h-screen flex-col overflow-hidden">
     <Navbar />
     <section id="my-animation">
