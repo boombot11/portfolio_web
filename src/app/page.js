@@ -8,6 +8,7 @@ import SplineComponent from "@/components/Spline/Exporter";
 import ExporterInternship from "@/components/Internship/exporter";
 import './globals.css';
 import CoachMark from "@/components/coach_mark";
+import SkillsList from "@/components/skills/Skill_list";
 
 
 export default function Home() {
@@ -23,6 +24,9 @@ export default function Home() {
     </section>
     <section id="exporter-internship">
       <ExporterInternship />
+    </section>
+    <section id='skills' >
+    <SkillsList/>
     </section>
     <section id="circular-animation">
       <CircularAnimation />
