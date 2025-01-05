@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Style for the overall contact section */
+.isolate {
+    font-size: 3rem; /* Contact section heading */
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .contact{
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 70px;
+    font-weight: bold;
+  }
+  label{
+    padding: 7px;
+  }
+  .text-gray-900 {
+    font-size: 2.2rem; /* Labels (First name, Company, etc.) */
+  }
+  
+  input,
+  textarea {
+    font-size: 1.8rem; /* Inside text fields */
+  }
+  

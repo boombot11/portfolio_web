@@ -4,6 +4,9 @@ import styles from './framer_title.css';
 import Helper_sever from "../Spline/middle";
 
 const MyAnimation = () => {
+
+ 
+
   return (
     <div className="TopWrap">
     <div
@@ -27,7 +30,6 @@ const MyAnimation = () => {
         Btech IT 2026
       </motion.p>
     </div>
-<Helper_sever></Helper_sever>
     </div>
   )
 }
