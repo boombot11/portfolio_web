@@ -63,7 +63,7 @@ const styles = {
   description: {
     fontSize: "22px",
     color: "#666",
-    lineHeight: "3",
+    lineHeight: "2",
   },
   readMore: {
     color: "#007bff",

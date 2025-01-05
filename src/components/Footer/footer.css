@@ -13,7 +13,6 @@
 .footer-content {
     max-width: 1200px;
     width: 100%;
-    padding: 0 20px;
     text-align: center;
 }
 
@@ -24,11 +23,11 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 4px;
 }
 
 .social-icons li {
-    display: inline-block;
+    display: inline;
 }
 
 .social-icons img {

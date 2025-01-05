@@ -15,7 +15,9 @@
 }
 .wrapText h1{
     font-size: 6em;
+    text-align: center;
 }
 .wrapText p{
     font-size: 4rem;
+    text-align: center;
 }

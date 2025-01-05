@@ -5,7 +5,7 @@ import './contact.css';
 export default function ContactMe() {
   const handleSubmit = async (e, message) => {
     e.preventDefault();
-    console.log('Sending...');
+ 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -16,14 +16,12 @@ export default function ContactMe() {
       });
 
       if (response.ok) {
-        console.log('Message sent successfully!');
         setFormData({ name: '', email: '', phone: '' }); // Clear form
       } else {
-        console.log('Failed to send message. Please try again.');
+       
       }
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      console.log('There was an error. Please try again later.');
+      
     }
   };
 

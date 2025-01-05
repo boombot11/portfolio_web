@@ -10,7 +10,7 @@ const ExporterInternship = () => {
     fetch("/internship.txt")
       .then((response) => response.text())
       .then((text) => {
-        console.log(text);
+      
         // Split the content based on your custom separator
         const internships = text.split("__seperator__");
     
@@ -19,9 +19,8 @@ const ExporterInternship = () => {
           let title = "";
           let pos = "";
           let description = "";
-          console.log('yyyyyy')
-        console.log(internship)
-        console.log('yyyyyy')
+    
+
           lines.forEach(line => {
             if (line.startsWith("Title: ")) {
               title = line.split(": ")[1];
@@ -36,8 +35,7 @@ const ExporterInternship = () => {
   
           return { title, pos, description };
         });
-        console.log('xxxxxxxxxxxxxxx')
-console.log(parsedDetails)
+
         setDetails(parsedDetails);
       })
       .catch((error) => console.error("Error loading the file:", error));

@@ -8,8 +8,7 @@ export  async function POST(req, res) {
       },)
   }
 
-console.log(process.env.EMAIL_PASSWORD,)
-console.log(process.env.EMAIL_USER,)
+
   // Nodemailer transport configuration
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
