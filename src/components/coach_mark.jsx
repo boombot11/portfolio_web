@@ -8,11 +8,11 @@ const CoachMark = ({ children, message }) => {
   // Check if the coachmark has been shown before on page load
   useEffect(() => {
     // Check if the flag is in localStorage
-    const coachmarkShown = localStorage.getItem('coachmarkShown');
+    // const coachmarkShown = localStorage.getItem('coachmarkShown');
     
-    if (coachmarkShown) {
-      setShowCoachmark(false); // If shown before, do not show it again
-    }
+    // if (coachmarkShown) {
+    //   setShowCoachmark(false); // If shown before, do not show it again
+    // }
   }, []);
 
   // Disable scrolling when coachmark is shown
