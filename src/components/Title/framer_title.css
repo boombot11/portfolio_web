@@ -18,6 +18,8 @@
     text-align: center;
 }
 .wrapText p{
-    font-size: 2rem;
     text-align: center;
+    font-size: 4rem;
+    margin:2rem;
+
 }

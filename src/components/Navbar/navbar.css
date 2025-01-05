@@ -110,7 +110,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 1200px) {
+@media (max-width: 1380px) {
     .navbar-links {
         display: none;
         flex-direction: column;
