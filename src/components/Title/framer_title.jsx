@@ -31,6 +31,13 @@ const MyAnimation = () => {
       >
         Btech IT 2026
       </motion.p>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        DJ Sanghvi College 
+      </motion.p>
     </div>
     </div>
   )
