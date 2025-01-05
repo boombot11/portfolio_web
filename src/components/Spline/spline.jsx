@@ -14,27 +14,6 @@ export default function Splines() {
   const [minWidth, setMinWidth] = useState(500); // Default minWidth
 
   // Update minWidth based on window size
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1100) {
-        setMinWidth(1300);
-      } else {
-        setMinWidth(650);
-      }
-    };
-
-    // Set initial minWidth
-    handleResize();
-
-    // Add event listener for resize
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const WrapStyle = {
     maxWidth: '1000px',
     minWidth: `${minWidth}px`, // Use dynamic minWidth
@@ -59,24 +38,47 @@ export default function Splines() {
       keyCode: keyCodeMapping[key],
       code: key,
       which: keyCodeMapping[key],
+      bubbles: true,
+      cancelable: true,
     });
 
     document.dispatchEvent(event);
-    console.log(`Simulated ${key} arrow key press`);
+    console.log(`Simulated ${key} key press`);
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1100) {
+        setMinWidth(1000);
+      } else {
+        setMinWidth(650);
+      }
+    };
+
+    // Set initial minWidth
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Simulate Enter key press every 4 seconds
+    const intervalId = setInterval(() => {
+      simulateKeyPress('Enter');
+    }, 4000); // Runs every 4 seconds
+
     const handleKeyDown = (event) => {
-      console.log('hehehehe   ' + event.code);
+      console.log('Key pressed: ' + event.code);
       simulateKeyPress(event.key);
     };
 
-    // Add event listener to the document
+    // Add event listener to the document for keydown
     document.addEventListener('keydown', handleKeyDown);
 
     // Cleanup event listener on component unmount
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleResize);
+      clearInterval(intervalId); // Clear the interval on unmount
     };
   }, []);
 

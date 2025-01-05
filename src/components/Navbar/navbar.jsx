@@ -20,11 +20,13 @@ const Navbar = () => {
                 <span className="bar"></span>
             </div>
             <nav className="navbar-links">
+
                 <a onClick={() => setIsOpen(false)}  href="#my-animation">About</a>
                 <a onClick={() => setIsOpen(false)} href="#exporter-internship">Internships</a>
                 <a onClick={() => setIsOpen(false)} href="#circular-animation">Project</a>
                 {/* <a onClick={() => setIsOpen(false)} id="contact-button" href="#contact-me">Contact</a> */}
                 <a onClick={() => setIsOpen(false)} id="contact-button" href="#contact-me">Contact Me</a>
+
             </nav>
          
         </div>
