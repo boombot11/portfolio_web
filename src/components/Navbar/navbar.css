@@ -28,7 +28,7 @@ body {
 .navbar-links a {
     color: #333;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.6rem;
     position: relative;
     transition: transform 1s ease, color 1s ease;
 }
@@ -75,7 +75,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .navbar-links {
         display: none;
         flex-direction: column;
@@ -93,7 +93,7 @@ body {
         position: fixed;
         color: #333;
         text-decoration: none;
-        font-size: 2.3rem;
+        font-size: 1.3rem;
         position: relative;
         transition: transform 0.3s ease, color 0.3s ease;
     }

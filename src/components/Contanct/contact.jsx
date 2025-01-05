@@ -2,10 +2,8 @@
 
 import './contact.css';
 
-
 export default function ContactMe() {
-
-  const handleSubmit = async (e,message) => {
+  const handleSubmit = async (e, message) => {
     e.preventDefault();
     console.log('Sending...');
     try {
@@ -29,14 +27,12 @@ export default function ContactMe() {
     }
   };
 
-
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-3xl text-center"> {/* Changed max-w-xl to max-w-3xl */}
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Me</h2>
-      
       </div>
-      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form action="#" method="POST" className="mx-auto mt-16 max-w-3xl sm:mt-20"> {/* Changed max-w-xl to max-w-3xl */}
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
@@ -62,7 +58,7 @@ export default function ContactMe() {
                 name="last-name"
                 type="text"
                 autoComplete="family-name"
-                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray -900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -109,7 +105,7 @@ export default function ContactMe() {
                 name="phone-number"
                 type="tel"
                 autoComplete="tel"
-                placeholder='Type in format +country format'
+                placeholder="Type in format +country format"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -131,13 +127,13 @@ export default function ContactMe() {
         </div>
         <div className="mt-10">
           <button
-            onClick={(e)=>handleSubmit(e,document.getElementById("message").value)}
-          className="block w-full rounded-md bg-gray-200 px-3.5 py-2.5 text-center text-sm font-semibold text-black shadow-sm hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+            onClick={(e) => handleSubmit(e, document.getElementById("message").value)}
+            className="block w-full rounded-md bg-gray-200 px-3.5 py-2.5 text-center text-sm font-semibold text-black shadow-sm hover:outline-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
           >
             Let's talk
           </button>
         </div>
       </form>
     </div>
-  )
+  );
 }

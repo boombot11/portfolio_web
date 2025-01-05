@@ -12,6 +12,15 @@ module.exports = {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
+		fontsize:{
+			'3xl': '3rem', // Set 3xl to 3rem
+			'2xl': '2.25rem', // Adjust 2xl accordingly
+			'xl': '1.5rem', // Adjust xl accordingly
+			'lg': '1.125rem', // Adjust lg accordingly
+			'base': '1rem', // Base size
+			'sm': '0.875rem', // Small size
+			'xs': '0.75rem', // Extra small size
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

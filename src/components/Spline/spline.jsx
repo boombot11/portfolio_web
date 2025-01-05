@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
 
-
-
 const ButtonStyle = {
   border: 'solid 1px white',
   fontSize: 'larger',
@@ -12,49 +10,61 @@ const ButtonStyle = {
   height: '50px',
 };
 
-const WrapStyle = {
-  maxWidth: '1000px',
-  minHeight: '400px',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-};
+export default function Splines() {
+  const [minWidth, setMinWidth] = useState(500); // Default minWidth
 
-// Simulate keypresses
-const simulateKeyPress = (key, number) => {
-  const keyCodeMapping = {
-    ArrowLeft: 37,
-    ArrowRight: 39,
-    Enter: 13,
+  // Update minWidth based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1100) {
+        setMinWidth(1300);
+      } else {
+        setMinWidth(650);
+      }
+    };
+
+    // Set initial minWidth
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const WrapStyle = {
+    maxWidth: '1000px',
+    minWidth: `${minWidth}px`, // Use dynamic minWidth
+    minHeight: '400px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   };
 
-  const event = new KeyboardEvent('keydown', {
-    key: key,
-    keyCode: keyCodeMapping[key],
-    code: key,
-    which: keyCodeMapping[key],
-  });
+  // Simulate keypresses
+  const simulateKeyPress = (key) => {
+    const keyCodeMapping = {
+      ArrowLeft: 37,
+      ArrowRight: 39,
+      Enter: 13,
+    };
 
-  document.dispatchEvent(event);
-  console.log(`Simulated ${key} arrow key press`);
-};
+    const event = new KeyboardEvent('keydown', {
+      key: key,
+      keyCode: keyCodeMapping[key],
+      code: key,
+      which: keyCodeMapping[key],
+    });
 
-const Timer = setTimeout(() => {
-  simulateKeyPress('Enter');
-  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxx');
-  Repeat();
-}, 3000);
-
-function Repeat() {
-  Timer;
-}
-
-export default function Splines() {
-
+    document.dispatchEvent(event);
+    console.log(`Simulated ${key} arrow key press`);
+  };
 
   useEffect(() => {
-    Repeat();
     const handleKeyDown = (event) => {
       console.log('hehehehe   ' + event.code);
       simulateKeyPress(event.key);
@@ -70,23 +80,16 @@ export default function Splines() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems:'center' }}>
-      <div
-        style={WrapStyle}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 1 }}
-        // onAnimationComplete={() => setLoad(true)}
-      >
-        <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowLeft', 37)}>
+    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={WrapStyle}>
+        <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowLeft')}>
           ←
         </button>
         <Spline scene="https://prod.spline.design/Yo7LJmF5W4GGk-RR/scene.splinecode" />
-        <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowRight', 39)}>
+        <button style={ButtonStyle} onClick={() => simulateKeyPress('ArrowRight')}>
           →
         </button>
       </div>
-     
     </div>
   );
 }

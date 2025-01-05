@@ -52,16 +52,16 @@ const styles = {
   },
   title: {
     marginBottom: "3px",
-    fontSize: "2rem",
+    fontSize: "3rem",
     color: "#333",
   },
   pos: {
     marginBottom: "15px",
-    fontSize: "1.2rem",
+    fontSize: "2rem",
     color: "#555",
   },
   description: {
-    fontSize: "14px",
+    fontSize: "22px",
     color: "#666",
     lineHeight: "3",
   },
