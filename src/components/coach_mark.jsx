@@ -39,8 +39,8 @@ const CoachMark = ({ children, message }) => {
       {showCoachmark && (
         <div style={styles.overlay}>
           <div style={styles.modal}>
-            <h2>Note</h2>
-            <p>{message}</p>
+            <h2 style={{fontSize:"2rem"}}>Note</h2>
+            <p style={{fontSize:"1.7rem"}}>{message}</p>
             <button onClick={handleClose} style={styles.button}>OK</button>
           </div>
         </div>
@@ -64,7 +64,7 @@ const styles = {
     padding: '20px',
   },
   modal: {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',  // Slightly opaque white background for the modal
+     // Slightly opaque white background for the modal
     padding: '20px',
     display:"flex",
     flexDirection:"column",
@@ -81,7 +81,7 @@ const styles = {
     border: 'none',
     backgroundColor: '#007bff',
     color: 'white',
-    fontSize: '16px',
+    fontSize: '1.3rem',
     borderRadius: '5px',
     cursor: 'pointer',
   },
