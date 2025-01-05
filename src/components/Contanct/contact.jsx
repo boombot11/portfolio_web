@@ -29,11 +29,16 @@ export default function ContactMe() {
 
   return (
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-      <div className="mx-auto max-w-3xl text-center"> {/* Changed max-w-xl to max-w-3xl */}
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Me</h2>
+      <div className="flex-col content-center mx-auto max-w-3xl text-center align"> {/* Changed max-w-xl to max-w-3xl */}
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Me //Nodemailer is not set up for now</h2>
+        <p
+           className=" contact "
+          >
+            Gmail:sahiljadhav2769@gmail.com  || no: 8828181102 
+          </p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-3xl sm:mt-20"> {/* Changed max-w-xl to max-w-3xl */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+       <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
               First name

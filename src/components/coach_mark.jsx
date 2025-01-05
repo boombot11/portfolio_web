@@ -5,6 +5,16 @@ import React, { useState, useEffect } from 'react';
 const CoachMark = ({ children, message }) => {
   const [showCoachmark, setShowCoachmark] = useState(true);
 
+  // Check if the coachmark has been shown before on page load
+  useEffect(() => {
+    // Check if the flag is in localStorage
+    const coachmarkShown = localStorage.getItem('coachmarkShown');
+    
+    if (coachmarkShown) {
+      setShowCoachmark(false); // If shown before, do not show it again
+    }
+  }, []);
+
   // Disable scrolling when coachmark is shown
   useEffect(() => {
     if (showCoachmark) {
@@ -21,6 +31,7 @@ const CoachMark = ({ children, message }) => {
 
   const handleClose = () => {
     setShowCoachmark(false);
+    localStorage.setItem('coachmarkShown', 'true'); // Save to localStorage that coachmark has been shown
   };
 
   return (
@@ -58,7 +69,7 @@ const styles = {
     display:"flex",
     flexDirection:"column",
     gap:"2rem",
-    alignItems:"centre",
+    alignItems:"center", // Fixed typo: "centre" should be "center"
     borderRadius: '8px',
     width: '300px',
     textAlign: 'center',
