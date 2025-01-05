@@ -1,60 +1,79 @@
-import { useState, useLayoutEffect, useRef } from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 
-const CoachMark = ({ targetId, onClose }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [position, setPosition] = useState({ top: 0, left: 0 });
-  const coachMarkRef = useRef(null);
+// Custom Coachmark Component that wraps around children components
+const CoachMark = ({ children, message }) => {
+  const [showCoachmark, setShowCoachmark] = useState(true);
 
-  useLayoutEffect(() => {
-    const targetElement = document.getElementById(targetId);
-    if (targetElement && coachMarkRef.current) {
-      // Get the position of the target element
-      const rect = targetElement.getBoundingClientRect();
-      // Calculate the position of the coach mark with a slight offset
-      setPosition({
-        top: rect.top + window.scrollY + rect.height / 2 - coachMarkRef.current.offsetHeight / 2,
-        left: rect.left + window.scrollX + rect.width + 20, // 20px offset to the right
-      });
-      setIsVisible(true);
+  // Disable scrolling when coachmark is shown
+  useEffect(() => {
+    if (showCoachmark) {
+      document.body.style.overflow = 'hidden';  // Lock scrolling
+    } else {
+      document.body.style.overflow = 'auto';   // Enable scrolling after coachmark is closed
     }
 
-    // Clean up if the component is removed
-    return () => setIsVisible(false);
-  }, [targetId]);
+    // Cleanup when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showCoachmark]);
 
-  const handleScroll = () => {
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - 50, // scroll a little above the target
-        behavior: 'smooth',
-      });
-    }
+  const handleClose = () => {
+    setShowCoachmark(false);
   };
 
-  return isVisible ? (
-    <div
-      ref={coachMarkRef}
-      className="coach-mark"
-      style={{
-        position: 'absolute',
-        top: `${position.top}px`,
-        left: `${position.left}px`,
-        background: 'rgba(0, 0, 0, 0.7)',
-        color: 'white',
-        padding: '10px 15px',
-        borderRadius: '5px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 1000,
-      }}
-    >
-      <p>This is the Coach Mark for your section!</p>
-      <button onClick={onClose} style={{ marginLeft: '10px' }}>Close</button>
-      <button onClick={handleScroll} style={{ marginLeft: '10px' }}>Scroll to Section</button>
-    </div>
-  ) : null;
+  return (
+    <>
+      {showCoachmark && (
+        <div style={styles.overlay}>
+          <div style={styles.modal}>
+            <h2>Note</h2>
+            <p>{message}</p>
+            <button onClick={handleClose} style={styles.button}>OK</button>
+          </div>
+        </div>
+      )}
+      {children}
+    </>
+  );
+};
+
+// Styles for the Coachmark component with Glass Effect
+const styles = {
+  overlay: {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',  // Center the coachmark
+    zIndex: 1000,
+    backdropFilter: 'blur(10px)',         // Apply blur to the background
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Semi-transparent background for the "glass" effect
+    borderRadius: '8px',                 // Optional: to make the edges rounded
+    padding: '20px',
+  },
+  modal: {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',  // Slightly opaque white background for the modal
+    padding: '20px',
+    display:"flex",
+    flexDirection:"column",
+    gap:"2rem",
+    alignItems:"centre",
+    borderRadius: '8px',
+    width: '300px',
+    textAlign: 'center',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    position: 'relative',
+  },
+  button: {
+    padding: '10px 20px',
+    border: 'none',
+    backgroundColor: '#007bff',
+    color: 'white',
+    fontSize: '16px',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  },
 };
 
 export default CoachMark;
