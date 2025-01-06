@@ -44,11 +44,8 @@ export default function ContactMe() {
           <div className="screen-body">
             <div className="screen-body-item left">
               <div className="app-title">
-                <span>CONTACT</span>
-                <span>Me</span>
-                <span>Not Working for now</span>
-                <span>sahiljadhav2769@gmail.com</span>
-                <span>8828181102</span>
+                  <span>CONTACT</span>
+                <span>Me **NodeMailer not working for now </span>
               </div>
               <div className="app-contact">sahiljadhav2769@gmail.com  +91 8828181102</div>
             </div>
