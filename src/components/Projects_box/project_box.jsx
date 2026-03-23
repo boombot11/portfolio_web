@@ -1,46 +1,75 @@
 'use client'
 import React from 'react';
-import './project_box.css'; // External CSS for styling
+import './project_box.css';
 
 const projects = [
-
-  { title: 'Task Owl', image: 'task_login.png', type: 'web' },
-  { title: 'Student Help', image: 'STUDENT+HELP.png', type: 'web' },
-  { title: 'DJS NOVA', image: 'SS3.png', type: 'web' },
-  { title: 'DJS CSI app', image: 'CSI.png', type: 'app' },
-  { title: 'Hackathon_app (incomplete idk name)', image: 'dy.png', type: 'app' },
-  { title: 'Mental Health website', image: 'Mental_health.png', type: 'web' },
-
+  {
+    title: 'Task Owl',
+    image: 'task_login.png',
+    type: 'Web App',
+    description: 'Task management web app',
+    github: 'https://github.com/boombot11',
+  },
+  {
+    title: 'Student Help',
+    image: 'STUDENT+HELP.png',
+    type: 'Web App',
+    description: 'Student resource platform',
+    github: 'https://github.com/boombot11',
+  },
+  {
+    title: 'DJS NOVA',
+    image: 'SS3.png',
+    type: 'Web App',
+    description: 'College fest website',
+    github: 'https://github.com/boombot11',
+  },
+  {
+    title: 'DJS CSI App',
+    image: 'CSI.png',
+    type: 'Mobile App',
+    description: 'Flutter mobile app for DJS CSI',
+    github: 'https://github.com/boombot11',
+  },
+  {
+    title: 'Hackathon App',
+    image: 'dy.png',
+    type: 'Mobile App',
+    description: 'Hackathon project app',
+    github: 'https://github.com/boombot11',
+  },
+  {
+    title: 'Mental Health Website',
+    image: 'Mental_health.png',
+    type: 'Web App',
+    description: 'Mental health awareness site',
+    github: 'https://github.com/boombot11',
+  },
 ];
 
 const ProjectGrid = () => {
-
-  const handleClick = () => {
-    // The link to be opened
-    const url = 'https://github.com/boombot11?tab=overview&from=2025-01-01&to=2025-01-05';
-    // Open the URL in a new tab
-    window.open(url, '_blank');
-  };
-
   return (
-    <div className='main'>
-      <h2 className="projects-heading">Projects</h2>
+    <div className="projects-main">
+      <h2 className="projects-heading">
+        <span>Projects</span>
+      </h2>
       <div className="grid-container">
         {projects.map((project, index) => (
-          <div className="grid-item-wrapper" key={index}>
-            {/* Grid item with hover effects */}
+          <div
+            className="grid-item-wrapper"
+            key={index}
+            onClick={() => window.open(project.github, '_blank')}
+          >
             <div
-              onClick={handleClick}
               className="grid-item"
-              style={{
-                backgroundImage: `url(${project.image})`,
-              }}
+              style={{ backgroundImage: `url(${project.image})` }}
             >
               <div className="overlay">
-                <h3 className="title">{project.type}</h3>
+                <span className="overlay-type">{project.type}</span>
+                <p className="overlay-desc">{project.description}</p>
+                <span className="overlay-cta">View on GitHub →</span>
               </div>
             </div>
-            {/* Title displayed below the image */}
             <div className="project-name">{project.title}</div>
           </div>
         ))}

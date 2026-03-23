@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* Add this to your contact.css file */
+/* Contact component styles */
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -124,11 +121,7 @@ body, button, input, textarea {
   background: white;
 }
 
-.app-contact {
-  margin-top: auto;
-  font-size: 15px;
-  color: #a5a3a3;
-}
+/* .app-contact moved to bottom of file */
 
 .app-form-group {
   margin-bottom: 15px;
@@ -175,6 +168,46 @@ body, button, input, textarea {
 
 .app-form-button:hover {
   color: #b9134f;
+}
+
+.app-form-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-status {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.form-status.success {
+  color: #74c54f;
+}
+
+.form-status.error {
+  color: #ed1c6f;
+}
+
+.contact-link {
+  color: #ea1d6f;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #b9134f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 13px;
+  color: #a5a3a3;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .credits {

@@ -1,59 +1,62 @@
 import React from 'react';
-import styles from './Skill_list.css';
-// TechDiv Component (Logo only)
-const TechDiv = ({ logoSrc }) => (
-  <div style={{display:"inline"}} className="tech-div">
-    <img  src={logoSrc} alt="Technology Logo" className="tech-logo" />
-  </div>
-);
+import './Skill_list.css';
+
+const skills = [
+  {
+    category: 'Languages',
+    items: [
+      { name: 'Python', logo: 'python.png' },
+      { name: 'JavaScript', logo: 'javscript.png' },
+      { name: 'Dart', logo: 'dart.jpeg' },
+    ],
+  },
+  {
+    category: 'Frameworks',
+    items: [
+      { name: 'React', logo: 'react.png' },
+      { name: 'Flutter', logo: 'flutter.png' },
+      { name: 'Next.js', logo: 'nextjs.png' },
+    ],
+  },
+  {
+    category: 'Databases',
+    items: [
+      { name: 'SQL', logo: 'sql.png' },
+      { name: 'MongoDB', logo: 'mongo.png' },
+      { name: 'Firebase', logo: 'download.png' },
+    ],
+  },
+  {
+    category: 'Tools',
+    items: [
+      { name: 'Git', logo: 'git.png' },
+    ],
+  },
+];
 
 const SkillsList = () => {
-  const data = [
-    {
-      title: "Prog Languages",
-      technologies: [
-        { logoSrc: "python.png" },
-        { logoSrc: "javscript.png" },
-        { logoSrc: "dart.jpeg" }
-      ]
-    },
-    {
-      title: "Frameworks",
-      technologies: [
-        { logoSrc: "react.png" },
-        { logoSrc: "flutter.png" },
-        { logoSrc: "nextjs.png" },
-      ]
-    },
-    {
-       title: "Databases",
-      technologies: [
-        { logoSrc: "sql.png" },
-        { logoSrc: "mongo.png" },
-        { logoSrc: "download.png" }
-      ]
-    },
-    {
-        title:"Github",
-        technologies:[
-            {logoSrc:"git.png"}
-        ]
-    }
-    // Add other categories here similarly...
-  ];
-
   return (
-    <div className="skills-container">
-      {data.map((item, index) => (
-        <div key={index} className="skill-row">
-          <strong>{item.title}:</strong>
-          <div className='image-row'>
-          {(item.technologies || []).map((tech, techIndex) => (
-  <TechDiv key={techIndex} logoSrc={tech.logoSrc} />
-))}
+    <div className="skills-section">
+      <h2 className="skills-heading">
+        <span>Skills</span>
+      </h2>
+      <div className="skills-grid">
+        {skills.map((group, i) => (
+          <div key={i} className="skill-card">
+            <h3 className="skill-category">{group.category}</h3>
+            <div className="skill-items">
+              {group.items.map((item, j) => (
+                <div key={j} className="skill-item">
+                  <div className="skill-logo-wrap">
+                    <img src={item.logo} alt={item.name} className="skill-logo" />
+                  </div>
+                  <span className="skill-name">{item.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
